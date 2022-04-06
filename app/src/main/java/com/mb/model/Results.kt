@@ -6,5 +6,6 @@ data class Results(
     val description : String,
     val modified : String,
     val resourceURI : String,
+    val thumbnail : Thumbnail,
     val urls : List<Urls>
 )
