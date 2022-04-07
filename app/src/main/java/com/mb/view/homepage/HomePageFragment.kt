@@ -8,12 +8,14 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.mb.marveluniverse.R
 import com.mb.marveluniverse.databinding.FragmentHomePageBinding
 import com.mb.model.Character
 import com.mb.model.Results
 import com.mb.utils.Resource
+import com.mb.view.heroDetail.IOnClick
 import com.mb.viewmodel.homepage.HomepageViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,10 +40,22 @@ class HomePageFragment : Fragment() {
         binding.characterListRec.adapter = adapter
 
         scrollListener()
+        onClickListener()
         getCharacters(offset)
     }
 
+    private fun onClickListener() {
+        adapter.addListener(object :  IOnClick {
+            override fun onClick(item: Results) {
+                val action = HomePageFragmentDirections.actionHomePageFragmentToHeroDetailsFragment(item.id)
+                findNavController().navigate(action)
+            }
+        })
+    }
+
     private fun getCharacters(offset : Int) {
+        sortToast?.show()
+        Log.i("deneme",offset.toString())
         viewModel.getAllCharacters(offset).observe(viewLifecycleOwner,{
             when(it.status){
                 Resource.Status.SUCCESS -> onSucces(it.data?.data?.results)
@@ -50,12 +64,12 @@ class HomePageFragment : Fragment() {
     }
 
     private fun onSucces(characterList: List<Results>?) {
-        sortToast?.cancel()
-
         mainList.addAll(characterList as MutableList<Results>)
         viewModel.characterList = mainList
         adapter.submitList(viewModel.characterList)
-        Log.i("deneme",characterList?.get(0)!!.thumbnail.path)
+        adapter.notifyDataSetChanged()
+        sortToast?.cancel()
+
     }
 
     private fun scrollListener() {
@@ -66,8 +80,10 @@ class HomePageFragment : Fragment() {
                 ) {
                     offset +=30
                     sortToast = Toast.makeText(requireContext(),"Loading..",Toast.LENGTH_SHORT)
+
                     val recyclerViewState = recyclerView.layoutManager?.onSaveInstanceState();
                     getCharacters(offset)
+
                     recyclerView.layoutManager?.onRestoreInstanceState(recyclerViewState)
                 }
             }

@@ -12,4 +12,11 @@ class ApiRepository @Inject constructor(
             remoteDataSource.getCharacters(apikey,ts,hash,limit,offset)
         }
     )
+
+
+    fun getCharacterDetails(apikey:String, ts:String, hash:String, id : Int) = networkOperation(
+        call = {
+            remoteDataSource.getCharacterDetails(apikey,ts,hash,id)
+        }
+    )
 }

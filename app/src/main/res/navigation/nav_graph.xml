@@ -9,5 +9,18 @@
         android:id="@+id/homePageFragment"
         android:name="com.mb.view.homepage.HomePageFragment"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_heroDetailsFragment"
+            app:destination="@id/heroDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heroDetailsFragment"
+        android:name="com.mb.view.heroDetail.HeroDetailsFragment"
+        android:label="fragment_hero_details"
+        tools:layout="@layout/fragment_hero_details" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
