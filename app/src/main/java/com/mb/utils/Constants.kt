@@ -6,11 +6,11 @@ import java.sql.Timestamp
 
 object Constants {
 
-    const val BASE_URL = "http://gateway.marvel.com/"
+    const val BASE_URL = "https://gateway.marvel.com/"
 
     val timeStamp = Timestamp(System.currentTimeMillis()).time.toString()
-    const val API_KEY = "key"
-    const val PRIVATE_KEY = "private key"
+    const val API_KEY = ""
+    const val PRIVATE_KEY = ""
     const val limit = "30"
     fun hash(): String {
         val input = "$timeStamp$PRIVATE_KEY$API_KEY"

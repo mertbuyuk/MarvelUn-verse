@@ -2,6 +2,7 @@ package com.mb.di
 
 import com.google.gson.Gson
 import com.mb.api.MarvelApiService
+import com.mb.api.RemoteDataSource
 import com.mb.marveluniverse.BuildConfig
 import com.mb.utils.Constants
 import dagger.Module
@@ -40,5 +41,13 @@ object RetrofitModule {
         })
         return builder.build()
 
-        //these are noauth
-}}
+
+
+    }
+    @Provides
+    fun provideRemoteDataSource(
+        apiService: MarvelApiService,
+    ): RemoteDataSource {
+        return RemoteDataSource(apiService)
+    }
+}

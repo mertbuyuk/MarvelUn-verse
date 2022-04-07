@@ -32,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -40,7 +44,7 @@ dependencies {
     def dagger_hilt = "2.41"
     def retrofit = "2.9.0"
     def lifecycle_version = "2.4.1"
-
+    def nav_version = "2.4.2"
     //Dagger Hilt
     implementation("com.google.dagger:hilt-android:$dagger_hilt")
     kapt("com.google.dagger:hilt-android-compiler:$dagger_hilt")
@@ -60,6 +64,13 @@ dependencies {
     //coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0")
 
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    // Nav Comp
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
