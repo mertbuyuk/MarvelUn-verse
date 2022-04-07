@@ -27,6 +27,7 @@ class HomePageFragment : Fragment() {
     private val adapter = HomePageAdapter()
     private var offset = 0
     private var sortToast: Toast? = null
+    private var flag = true
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,7 +42,10 @@ class HomePageFragment : Fragment() {
 
         scrollListener()
         onClickListener()
-        getCharacters(offset)
+        if (flag){
+            getCharacters(offset)
+            flag = false
+        }
     }
 
     private fun onClickListener() {
