@@ -5,5 +5,5 @@ import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(private val marvelApiService: MarvelApiService) : BaseDataSource() {
 
-    suspend fun getCharacters(apikey:String, ts:String, hash:String) = getResult { marvelApiService.getAllCharacters(apikey,ts, hash) }
+    suspend fun getCharacters(apikey:String, ts:String, hash:String, limit : Int,offset : Int) = getResult { marvelApiService.getAllCharacters(apikey,ts, hash,limit, offset ) }
 }

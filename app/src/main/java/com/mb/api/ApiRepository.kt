@@ -7,9 +7,9 @@ class ApiRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ){
 
-    fun getCharacters(apikey:String, ts:String, hash:String) = networkOperation(
+    fun getCharacters(apikey:String, ts:String, hash:String, limit : Int,offset : Int) = networkOperation(
         call = {
-            remoteDataSource.getCharacters(apikey,ts,hash)
+            remoteDataSource.getCharacters(apikey,ts,hash,limit,offset)
         }
     )
 }

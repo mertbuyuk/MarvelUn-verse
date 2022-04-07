@@ -12,6 +12,8 @@ interface MarvelApiService {
     suspend fun getAllCharacters(
         @Query("apikey")apikey:String,
         @Query("ts")ts:String,
-        @Query("hash")hash:String
+        @Query("hash")hash:String,
+        @Query("limit")limit:Int,
+        @Query("offset")offset:Int
     ): Response<Character>
 }

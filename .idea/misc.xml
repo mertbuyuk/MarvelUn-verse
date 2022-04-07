@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Mert/Desktop/MarvelUniverse/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/MarvelUnverse/app/src/main/res/drawable/app_bg.xml" value="0.2890625" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/MarvelUnverse/app/src/main/res/drawable/characterlist_bg.xml" value="0.2890625" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/MarvelUnverse/app/src/main/res/layout/activity_main.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/MarvelUnverse/app/src/main/res/layout/characterlist_bg.xml" value="0.26268115942028986" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/MarvelUnverse/app/src/main/res/layout/characterlist_item.xml" value="0.26268115942028986" />
         <entry key="..\:/Users/mert.buyuk/AndroidStudioProjects/MarvelUnverse/app/src/main/res/layout/fragment_home_page.xml" value="0.14270833333333333" />
       </map>

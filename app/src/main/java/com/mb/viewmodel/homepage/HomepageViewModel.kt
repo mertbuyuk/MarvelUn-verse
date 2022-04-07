@@ -19,9 +19,11 @@ class HomepageViewModel @Inject constructor(private val apiRepository: ApiReposi
 
     var characterList : List<Results>? = null
 
-    fun getAllCharacters() : LiveData<Resource<Character>> = apiRepository.getCharacters(
+    fun getAllCharacters(offset : Int) : LiveData<Resource<Character>> = apiRepository.getCharacters(
         Constants.API_KEY,
         Constants.timeStamp,
-        Constants.hash()
+        Constants.hash(),
+        Constants.limit,
+        offset
     )
 }

@@ -20,6 +20,7 @@ class HomePageAdapter : ListAdapter<Results,HomePageAdapter.HomePageViewHolder>(
 
             Glide.with(binding.root)
                 .load(hero.thumbnail.path+"."+hero.thumbnail.extension)
+                .circleCrop()
                 .into(binding.heroImage)
         }
     }
