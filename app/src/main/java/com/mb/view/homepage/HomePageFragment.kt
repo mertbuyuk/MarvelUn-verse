@@ -8,6 +8,8 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.mb.marveluniverse.R
@@ -33,12 +35,19 @@ class HomePageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomePageBinding.inflate(inflater,container,false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.characterListRec.adapter = adapter
+
+
+        val actionBar: ActionBar? = (activity as AppCompatActivity?)!!.supportActionBar
+
+        actionBar?.setHomeButtonEnabled(true)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         scrollListener()
         onClickListener()
