@@ -24,7 +24,7 @@ object RetrofitModule {
         Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(provideOkHttpClient())
+            .client(okHttpClient)
             .build()
 
     @Singleton
@@ -40,4 +40,5 @@ object RetrofitModule {
         })
         return builder.build()
 
+        //these are noauth
 }}

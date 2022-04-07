@@ -1,4 +1,4 @@
-package com.mb.viewmodel.homepage
+package com.mb.view.homepage
 
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +8,12 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import android.view.ViewGroup
 import com.mb.marveluniverse.R
+import com.mb.viewmodel.homepage.HomepageViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.coroutineScope
 
 @AndroidEntryPoint
 class HomePageFragment : Fragment() {
-    private val viewModel : HomepageViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,5 @@ class HomePageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.get()
-        Log.i("deneme",viewModel.get().toString())
     }
 }
