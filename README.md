@@ -1,4 +1,7 @@
 # MarvelUniverse
+## APK 📲
+<a href=https://github.com/mertbuyuk/MarvelUniverse/blob/main/app-debug.apk>Download Apk</a>
+
 ## Previews
 <image src="https://user-images.githubusercontent.com/63505261/162373583-2dca346c-f7dc-46e8-b2ed-0d0fceb2cdb3.jpeg" width="300"> <image src="https://user-images.githubusercontent.com/63505261/162373599-a190eee7-9689-49d3-9597-55508c97ab52.jpeg" width="300"> 
   
